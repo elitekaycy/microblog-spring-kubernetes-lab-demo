@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: gatewayservice
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+      discovery:
+        enabled: true
+        all-namespace: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      mvc:
+        routes:
+          - id: user-service
+            uri: http://user-service
+            predicates:
+              - Path=/user/**
+            filters:
+              - StripPrefix=1
+          - id: dog-service
+            uri: https://dog.ceo/api/breeds/image/random
+            predicates: Path=/test/**
+            filters:
+              - StripPrefix=1
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+server:
+  port: 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
