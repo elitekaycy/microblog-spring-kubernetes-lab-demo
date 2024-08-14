@@ -1,0 +1,50 @@
+gnore Gradle Wrapper files within the specific project
+/micro_user/user/gradle/wrapper/gradle-wrapper.properties
+/micro_user/user/gradle/wrapper/gradle-wrapper.jar
+
+# Ignore build outputs within the specific project
+/micro_user/user/build/
+/micro_user/user/out/
+
+# Ignore Gradle cache directories within the specific project
+/micro_user/user/.gradle/
+/micro_user/user/buildSrc/.gradle/
+
+# Ignore IDE-specific files within the specific project
+/micro_user/user/.idea/
+/micro_user/user/*.iml
+
+# Ignore logs and temporary files within the specific project
+/micro_user/user/*.log
+/micro_user/user/*.tmp
+/micro_user/user/*.swp
+/micro_user/user/*~
+
+# Ignore macOS and Windows system files within the specific project
+/micro_user/user/.DS_Store
+/micro_user/user/Thumbs.db
+
+
+# Ignore Maven Wrapper files within the specific project
+/gatewayservice/mvnw
+/gatewayservice/mvnw.cmd
+/gatewayservice/.mvn/wrapper/maven-wrapper.properties
+/gatewayservice/.mvn/wrapper/maven-wrapper.jar
+
+# Ignore target directory within the specific project
+/gatewayservice/target/
+
+# Ignore IDE-specific files within the specific project
+/gatewayservice/.idea/
+/gatewayservice/*.iml
+
+# Ignore logs and temporary files within the specific project
+/gatewayservice/*.log
+/gatewayservice/*.tmp
+/gatewayservice/*.swp
+/gatewayservice/*~
+
+# Ignore macOS and Windows system files within the specific project
+/gatewayservice/.DS_Store
+/gatewayservice/Thumbs.db
+
