@@ -1,0 +1,8 @@
+CREATE TABLE post (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    timestamp TIMESTAMP NOT NULL
+);
+

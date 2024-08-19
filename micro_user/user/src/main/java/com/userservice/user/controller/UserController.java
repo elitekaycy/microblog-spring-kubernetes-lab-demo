@@ -1,6 +1,5 @@
 package com.userservice.user.controller;
 
-import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +8,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,10 +42,13 @@ public class UserController {
 
   @GetMapping("/me")
   @PreAuthorize("hasRole('USER')")
-  public ResponseEntity<Map<String, String>> me(Principal principal) {
-    Map<String, String> userdetail = new HashMap<>();
-    userdetail.put("username", principal.getName());
-    return ResponseEntity.ok(userdetail);
+  public ResponseEntity<Map<String, Object>> me(@AuthenticationPrincipal Jwt jwt) {
+    Map<String, Object> userInfo = new HashMap<>();
+    userInfo.put("username", jwt.getClaim("username"));
+    userInfo.put("roles", jwt.getClaim("scope"));
+    userInfo.put("issuedAt", jwt.getIssuedAt());
+    userInfo.put("expiresAt", jwt.getExpiresAt());
+    return ResponseEntity.ok(userInfo);
   }
 
   @GetMapping("/test")

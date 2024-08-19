@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: user-service-container
-          image: elitekaycy/user-userservice:latest
+          image: elitekaycy/user-userservice:v1.1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082

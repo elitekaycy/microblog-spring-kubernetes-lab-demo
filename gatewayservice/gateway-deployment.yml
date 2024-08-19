@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: elitekaycy/gateway-service:v1.1.4
+          image: elitekaycy/gateway-service:v1.1.7
           imagePullPolicy: Always
           ports:
             - containerPort: 8085

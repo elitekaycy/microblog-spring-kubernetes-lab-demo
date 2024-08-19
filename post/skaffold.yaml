@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: post
+build:
+  artifacts:
+    - image: dickson/post-service
+      jib:
+        project: com.posts:post
+manifests:
+  rawYaml:
+    - target/classes/META-INF/dekorate/kubernetes.yml

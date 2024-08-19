@@ -20,6 +20,12 @@ spring:
               - Path=/user/**
             filters:
               - StripPrefix=1
+          - id: post-service
+            uri: http://post
+            predicates:
+              - Path=/post/**
+            filters:
+              - StripPrefix=1
           - id: dog-service
             uri: https://dog.ceo/api/breeds/image/random
             predicates: Path=/test/**

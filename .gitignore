@@ -1,4 +1,4 @@
-gnore Gradle Wrapper files within the specific project
+# gnore Gradle Wrapper files within the specific project
 /micro_user/user/gradle/wrapper/gradle-wrapper.properties
 /micro_user/user/gradle/wrapper/gradle-wrapper.jar
 
