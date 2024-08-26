@@ -21,7 +21,7 @@ spring:
             filters:
               - StripPrefix=1
           - id: post-service
-            uri: http://post
+            uri: http://post-service
             predicates:
               - Path=/post/**
             filters:
